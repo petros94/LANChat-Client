@@ -131,7 +131,7 @@ public class GepChat_ChatWindow {
 	public void set_title_var(String title) {
 		// TODO Auto-generated method stub
 		title_var = title;
-		String s = "Gep Chat - " + title_var;
+		String s = "LAN Chat - " + title_var;
 		shell.setText(s);
 		
 	}
