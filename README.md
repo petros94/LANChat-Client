@@ -4,7 +4,7 @@
 
 LAN Chat is a simple one-to-many messaging platform, to be used in local network environments. The platform consists of a client app and a server app. The clients communicate with the server, and vice versa according to the diagram below:
 
-![alt text](https://github.com/petros94/LANChat-Client/blob/master/docs/Node%20Diagram.png-)
+![alt text](https://github.com/petros94/LANChat-Client/blob/master/docs/Node%20Diagram.png)
 
 The App provides a simple GUI to display and send messages. In case of a connection drop, the user is notified. 
 
