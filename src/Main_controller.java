@@ -8,8 +8,10 @@ public class Main_controller {
 	private GepChat_ChatWindow chatWindow_GUI;
 	public Chat_Updater updater;
 	private String user;
+	private String settings_path;
 	
 	public Main_controller(GepChat_ChatWindow chatWindow_GUI, String settings_path) {
+		this.settings_path = settings_path;
 		configure_client(settings_path);
 		init_gui(chatWindow_GUI, settings_path);
 	}
@@ -56,6 +58,7 @@ public class Main_controller {
 			
 			/*Update chat text*/
 			updater.update_chat();
+			updater.increment_counter();
 
 			
 		} catch (Exception e) {
@@ -76,7 +79,11 @@ public class Main_controller {
 	
 	
 	public void start_updater() {
-		updater = new Chat_Updater(chatWindow_GUI, this);	
+		updater = new Chat_Updater(chatWindow_GUI, this);
+		try {
+			updater.set_player(settings_path);
+		} catch (Exception e) {
+		}
 	}
 	
 	public void update_chat_text() {
@@ -120,5 +127,15 @@ public class Main_controller {
 		}
 		
 	}
+	
+	public String get_sound_path(String settings_path) {
+		try {
+			return new json_Settings_Parser().get_sound_path(settings_path);
+		} catch (Exception e) {
+			return "";
+		}
+		
+	}
+
 
 }

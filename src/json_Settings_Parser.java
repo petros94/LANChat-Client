@@ -14,6 +14,7 @@ public class json_Settings_Parser extends Settings_Parser{
 	    private String server;
 	    private String[] clients;
 	    private String icon;
+	    private String sound_notification_filepath;
 	    
 	    public String get_sender() {
 	    	return sender;
@@ -29,6 +30,9 @@ public class json_Settings_Parser extends Settings_Parser{
 		}
 		public String get_icon() {
 			return icon;
+		}
+		public String get_sound() {
+			return sound_notification_filepath;
 		}
 	}
 	
@@ -86,6 +90,10 @@ public class json_Settings_Parser extends Settings_Parser{
 	public String get_icon_path(String file_path) throws Exception{
 		// TODO Auto-generated method stub
 		return json_to_Settings_Class(file_path).get_icon();
+	}
+	
+	public String get_sound_path(String file_path) throws Exception {
+		return json_to_Settings_Class(file_path).get_sound();
 	}
 
 }
